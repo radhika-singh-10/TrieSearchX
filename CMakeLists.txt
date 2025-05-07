@@ -6,6 +6,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 set(CMAKE_PREFIX_PATH "/opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/share/cmake")
+set(CMAKE_INSTALL_RPATH "/opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/lib")
+
 
 
 find_package(mongocxx REQUIRED)
