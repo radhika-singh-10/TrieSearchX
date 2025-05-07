@@ -4,23 +4,20 @@ project(TrieSearchX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Homebrew MongoDB C++ driver paths
+set(MONGO_CXX_ROOT "/opt/homebrew/Cellar/mongo-cxx-driver/4.0.0")
 
-set(CMAKE_PREFIX_PATH "/opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/share/cmake")
-set(CMAKE_INSTALL_RPATH "/opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/lib")
+set(CMAKE_PREFIX_PATH "${MONGO_CXX_ROOT}/share/cmake")
+set(CMAKE_INSTALL_RPATH "${MONGO_CXX_ROOT}/lib")
 
-
-
-find_package(mongocxx REQUIRED)
-find_package(bsoncxx REQUIRED)
-
-
+# Manually set includes
 include_directories(
     include
-    /opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/include/mongocxx/v_noabi
-    /opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/include/bsoncxx/v_noabi
+    ${MONGO_CXX_ROOT}/include/mongocxx/v_noabi
+    ${MONGO_CXX_ROOT}/include/bsoncxx/v_noabi
 )
 
-
+# === Main App ===
 add_executable(TrieSearchX
     src/main.cpp
     src/Trie.cpp
@@ -29,13 +26,11 @@ add_executable(TrieSearchX
 )
 
 target_link_libraries(TrieSearchX
-    mongocxx
-    bsoncxx
-    /opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/lib/libmongocxx.dylib
-   /opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/lib/libbsoncxx.dylib
+    ${MONGO_CXX_ROOT}/lib/libmongocxx.dylib
+    ${MONGO_CXX_ROOT}/lib/libbsoncxx.dylib
 )
 
-
+# === Benchmark ===
 add_executable(benchmark
     scripts/benchmark.cpp
     src/Trie.cpp
@@ -43,7 +38,6 @@ add_executable(benchmark
 )
 
 target_link_libraries(benchmark
-    mongocxx
-    bsoncxx
+    ${MONGO_CXX_ROOT}/lib/libmongocxx.dylib
+    ${MONGO_CXX_ROOT}/lib/libbsoncxx.dylib
 )
-
