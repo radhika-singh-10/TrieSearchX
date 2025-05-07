@@ -7,7 +7,7 @@
 
 ✔ Ultra-Fast Search (<10ms Response Time) – Trie-based prefix lookups ensure near-instant autocomplete suggestions.
 
-✔ Scalable Backend with **Cassandra** – Handles large-scale datasets efficiently with distributed storage.
+✔ Scalable Backend with **MongoDB** – Handles large-scale datasets efficiently with distributed storage.
 
 ✔ Adaptive Learning – Logs user queries in Cassandra to improve future search accuracy.
 
