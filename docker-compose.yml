@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:6
+    container_name: trie_mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - trie_data:/data/db
+
+volumes:
+  trie_data: minikube
