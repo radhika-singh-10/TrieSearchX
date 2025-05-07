@@ -10,4 +10,4 @@ services:
       - trie_data:/data/db
 
 volumes:
-  trie_data: minikube
+  trie_data: {}
