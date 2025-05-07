@@ -1,0 +1,4 @@
+/Users/radhikasingh/masters/docs/projects/TrieSearchX/CMakeFiles/TrieSearchX.dir
+/Users/radhikasingh/masters/docs/projects/TrieSearchX/CMakeFiles/benchmark.dir
+/Users/radhikasingh/masters/docs/projects/TrieSearchX/CMakeFiles/edit_cache.dir
+/Users/radhikasingh/masters/docs/projects/TrieSearchX/CMakeFiles/rebuild_cache.dir
