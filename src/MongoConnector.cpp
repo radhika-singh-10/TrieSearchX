@@ -12,8 +12,8 @@ void MongoConnector::loadWordsToTrie(Trie& trie) {
 
     for (auto&& doc : collection.find({})) {
         auto element = doc["word"];
-        if (element.type() == bsoncxx::type::k_utf8) {
-            std::string word = element.get_string().value.to_string();
+        if (element.type() == bsoncxx::type::k_string) {
+            std::string word = std::string(element.get_string().value);
             trie.insert(word);
         }
     }
