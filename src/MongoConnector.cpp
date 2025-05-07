@@ -7,7 +7,7 @@
 
 void MongoConnector::loadWordsToTrie(Trie& trie) {
     mongocxx::instance inst{};
-    mongocxx::client conn{mongocxx::uri{"mongodb://root:password@localhost:27017/"}};
+    mongocxx::client conn{mongocxx::uri{"mongodb://root:password@localhost:27017/?authSource=admin"}};
     auto collection = conn["trie_db"]["words"];
 
     for (auto&& doc : collection.find({})) {
