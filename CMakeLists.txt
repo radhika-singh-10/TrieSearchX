@@ -16,6 +16,7 @@ include_directories(
     include
     /opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/include/mongocxx/v_noabi
     /opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/include/bsoncxx/v_noabi
+     /opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/lib
 )
 
 
