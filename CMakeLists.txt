@@ -12,7 +12,11 @@ find_package(mongocxx REQUIRED)
 find_package(bsoncxx REQUIRED)
 
 
-include_directories(include)
+include_directories(
+    include
+    /opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/include/mongocxx/v_noabi
+    /opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/include/bsoncxx/v_noabi
+)
 
 
 add_executable(TrieSearchX
