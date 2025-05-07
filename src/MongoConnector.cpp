@@ -11,7 +11,7 @@ void MongoConnector::loadWordsToTrie(Trie& trie) {
     auto collection = conn["trie_db"]["words"];
 
     for (auto&& doc : collection.find({})) {
-        std::string word = doc["word"].get_utf8().value.to_string();
+        std::string word = doc["word"].get_utf8().value.to_string(); //doc["word"].get_utf8().value.to_string();
         trie.insert(word);
     }
 
