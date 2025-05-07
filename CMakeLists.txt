@@ -18,8 +18,6 @@ include_directories(
     include
     /opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/include/mongocxx/v_noabi
     /opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/include/bsoncxx/v_noabi
-    /opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/lib/libmongocxx.dylib
-   /opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/lib/libbsoncxx.dylib
 )
 
 
@@ -33,6 +31,8 @@ add_executable(TrieSearchX
 target_link_libraries(TrieSearchX
     mongocxx
     bsoncxx
+    /opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/lib/libmongocxx.dylib
+   /opt/homebrew/Cellar/mongo-cxx-driver/4.0.0/lib/libbsoncxx.dylib
 )
 
 
