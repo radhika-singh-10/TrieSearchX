@@ -17,4 +17,5 @@ words = [
 
 collection.insert_many([{"word": w} for w in words])
 
+#logging
 print(f"[INFO] Inserted {len(words)} words into MongoDB.")
